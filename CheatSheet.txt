@@ -1,6 +1,10 @@
 
 ## Git Stuff ##################################################################
 
+-- get a local repro -------------------------------------------------------
+
+    git clone https://github.com/<myGit>/<myRepro>.git (e.g in cmd)
+
 -- Check State ----------------------------------------------------------------
 
     git status
@@ -46,3 +50,18 @@
     git checkout main
     git pull
     git merge <your-current-branch-name>
+
+## V I R T U A L    E N V ####################################################
+
+-- create req.txt ------------------------------------------------------------
+    pip freeze > requirements.txt 
+
+-- restore virt env ----------------------------------------------------------
+On any machine (or after cloning), you can recreate the environment with:
+    python -m venv .venv
+    .venv\Scripts\activate
+    pip install -r requirements.txt
+
+
+
+
