@@ -21,7 +21,8 @@ The Winner would be
 ## Stages
 Let's start in the following way:
 1. Let's get access to the webcam and move the picture to MediaPipe Hands an visualize that
-2. Have a gesture detetion which is capable of detecting
+2. Have a gesture detetion which is capable of detecting Rock, Paper, Scissors
+3. Add the game logic around that
 
 ## Tree
 
