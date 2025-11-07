@@ -50,6 +50,7 @@
     git checkout main
     git pull
     git merge <your-current-branch-name>
+    git push origin main
 
 ## V I R T U A L    E N V ####################################################
 

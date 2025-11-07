@@ -17,8 +17,10 @@ The Winner would be
 
 ## Tech Stack To Be Used
 - Github / MS Visual Coder / Jupiter Labs
-- Python 3.12
-- MediaPipe Hands (From Google)
+- **Python 3.12** (pls check requirements.txt for the used versions)
+    -> OpenCV
+    -> Numpy
+    -> MediaPipe Hands (From Google)
   
 ## Stages of development
 Let's start in the following way - one after another:
@@ -26,6 +28,46 @@ Let's start in the following way - one after another:
 2. Let's get access to the webcam and move the picture to MediaPipe Hands an visualize that
 3. Have a gesture detetion which is capable of detecting Rock, Paper, Scissors (Gesture Classification)
 4. Add the game logic around that
+
+## Main Statemachine (StM)
+additionals\StM.jpg
+
+### States
+
+#### RUN
+The current game score is visible in the upper right corner Human: X - PC: Y 
+"Press 'G' to start" is visible in the middle of the screen
+In RUN State the Camera output is shown, both hands are shown with grids
+
+#### COUNT
+The current game score is visible in the upper right corner Human: X - PC: Y
+In the count state the text ONE - TWO - THREE - GO! is shown for each 1.2sec
+After this time we jump to to verify
+
+#### VERIFY
+The Picture is frozen. 
+The Gesture is detected (Rock, Paper, Scissors, Don't Know)
+A random algorithm is returning the computers bet (Rock, Paper, Scissors)
+An Output is created and moved on the Screen
+The current game score is updated and visible in the upper right corner Human: X - PC: Y
+
+### Transitions
+#### Into RUN
+Jump into RUN state 
+- after program start
+- after the output was shown for 5 seconds
+
+#### RUN -> COUNT
+If key 'g' (for GO!) was pressed
+
+#### COUNT -> VERIFY
+if "GO!" was shown for 1.2 sec 
+
+#### VERIFY -> RUN
+after result was shown for 5 sec
+
+#### RUN -> EXIT
+if key 'ESC' was selected
 
 ## Folder structure
 
