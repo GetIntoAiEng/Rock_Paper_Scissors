@@ -5,6 +5,8 @@ To be able to get deeper into AI and have some stuff to demonstrate to potential
 Tags: Human-Computer Interaction (HCI) / Gesture Classification / hand gesture recognition 
 
 ## How to play it 
+Since one libs produces quite some warnings you might want to call this script by shifting them to dev0, on windows powershell this works by calling:   
+`python .\notebooks\rps_main.py *> $null`
 1. Press "s" to start or "ESC " to abbort
 2. PC will count 1, 2, GO!. With "GO!" show what you've got (I recomend to have your hand shown in an horizontal way)
 3. PC will tell you its solution and calculate the winner 

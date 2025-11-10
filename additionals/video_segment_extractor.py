@@ -1,5 +1,6 @@
 
 import cv2
+from pathlib import Path
 
 # Function to extract video segment between start_time and end_time
 def extract_video_segment(input_path, output_path, start_time, end_time):
@@ -35,11 +36,18 @@ def extract_video_segment(input_path, output_path, start_time, end_time):
     out.release()
     print(f"Video segment saved to {output_path}")
 
-# Example usage
+# define were to find the files and what to cut
 if __name__ == '__main__':
-    input_path = r'C:\Users\uie68285\Videos\Video Project.mp4'
-    output_path = r'C:\Users\uie68285\Videos\HumanWins.mp4'
-    start_time = 55   # seconds
-    end_time = 99    # seconds
+    input_path = r'..\videos\Screen Recording 2025-11-10 081021.mp4'
+    output_path = r'..\videos\uie68285\Videos\RockPaperScissors.mp4'
+    start_time = 105   # seconds
+    end_time = 140    # seconds
 
+    
+if Path(input_path).is_file():
     extract_video_segment(input_path, output_path, start_time, end_time)
+else:
+    print("Can't find input file")
+
+
+    
